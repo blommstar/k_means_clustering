@@ -12,7 +12,10 @@ with open('blogdata.txt', mode='r') as csv_file:
             line_count += 1
         else:
            #  print(f'{row[0]} är data från första raden och row2: {row[1]}')
-            print(f'\t{row["name"]} works in the {row["department"]} department, and was born in {row["birthday month"]}.')
+           )
             line_count += 1
     # print(f'Skrev ut {line_count} rader')
     print(f'Processed {line_count} lines.')
+
+def getData():
+    return csv_reader
