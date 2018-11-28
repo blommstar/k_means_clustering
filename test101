@@ -3,6 +3,8 @@ import pandas as pd
 import random
 import csv
 
+from scipy import stats as pcs
+
 # df = pd.read_csv("blogdata2.txt", sep="\t")
 
 df = pd.read_csv('blogdata2.txt', sep="\t", quoting=csv.QUOTE_NONE, index_col=False)
@@ -35,12 +37,25 @@ for i in range(0, clusters):
         c.append(ran)
     centriods.append(c)
 
-for centroid in centriods:
-    distance = 9999;
-    for blog in df.values:
-        # pearson score cent vs all blogs
-        print(blog)
-        break
+
+#for i in range(0, clusters):
+    for centroid in centriods:
+        distance = 0
+        for blog in df.values:
+            ## pearson score centroid vs all blogs
+            pearson = pcs.pearsonr(centroid[1:], blog[1:])[0]
+            ## Assign to closest centroid
+            # om pearson för centroid är högst
+            if pearson > distance:
+                distance = pearson
+                best = centroid
+            #print(blog)
+            #print(df.corrwith( pd.DataFrame(centriods), axis='columns'))
+    # blog['closest'] = best[0:1]
+    centroid.append(blog)
+
+    print(centroid[-1][0:1])
+    break
 
 
 '''
