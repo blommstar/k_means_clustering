@@ -1,13 +1,40 @@
-import pandas as pd
-import numpy
 import csv
+import random
 
-df = pd.read_csv('blogdata.txt', sep="\t", quoting=csv.QUOTE_NONE)
-print(df)
+import numpy as np
+import pandas as pd
 
+df = pd.read_csv('blogdata.csv', sep="\t", quoting=csv.QUOTE_NONE)#, index_col=False)
 
+# print(df.values)
 
-#print("Total rows: {0}".format(len(data)))
+# df = pd.DataFrame(df)
+print(df.corrwith(df, axis=1))
 
-# See which headers are available
-#print(list(data))
+# amount of clusters, speicified by assignment
+cluster_amount = 5
+
+words = df.columns.values
+blogs = []
+words_rand = []
+
+# Get blog names
+for word in words:
+    if word == 'Blog':
+        blogs.append(df[word])
+        continue
+    maxN = max(df[word])
+    minN = min(df[word])
+    words_rand.append([word, random.randint(minN, maxN)])
+
+# 5 random cluster points
+centroids = random.sample(words_rand, cluster_amount)
+
+# Calculation pearson inbetween blogs using pearson
+
+for word in df:
+    if word == 'Blog':
+        print(word)
+        continue;
+    # Clac centroid
+

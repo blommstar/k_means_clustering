@@ -1,0 +1,9 @@
+{
+  "python.pythonPath": "venv/bin/python",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "editor.formatOnSave": true,
+  "code-runner.executorMap": {
+    "python": "python3"
+  },
+}
