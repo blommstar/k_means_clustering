@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a7624ce-cce1-43be-bb0b-816c244e0fac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test101" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogdata2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/blogdata2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test101" beforeDir="false" afterPath="$PROJECT_DIR$/test101" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test101">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="309">
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -448,8 +446,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test101">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="309">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>

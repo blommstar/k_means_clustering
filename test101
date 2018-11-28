@@ -15,21 +15,32 @@ clusters = 5
 #############################
 
 name_with_random = dict()
-
-for col in df:
-    if col == 'Blog':
-        continue
-    min = df[col].values.min()
-    max = df[col].values.max()
-    ran = random.randint(min, max)
-    #print(f'col: {df[col].name}')
-    #print(f'max: {df[col].values.max()}')
-    #print(f'min: {df[col].values.min()}')
-    #print(f'ran: {ran}')
-    name_with_random[df[col].name] = ran
+centriods = []
 
 for i in range(0, clusters):
-    print(i)
+    # centroid = dict()
+    c = [f'centroid{i}']
+    for col in df:
+        if col == 'Blog':
+            continue
+        min = df[col].values.min()
+        max = df[col].values.max()
+        ran = random.randint(min, max)
+        #print(f'col: {df[col].name}')
+        #print(f'max: {df[col].values.max()}')
+        #print(f'min: {df[col].values.min()}')
+        #print(f'ran: {ran}')
+        #name_with_random[df[col].name] = ran # Bättre med sample??
+        #centroid[df[col].name] = ran
+        c.append(ran)
+    centriods.append(c)
+
+for centroid in centriods:
+    distance = 9999;
+    for blog in df.values:
+        # pearson score cent vs all blogs
+        print(blog)
+        break
 
 
 '''
