@@ -55,27 +55,75 @@ for i in range(0, clusters):
 
 
 centroids = pd.DataFrame.from_dict(centroids, orient='index', columns=list(df.columns.values))
+centroids.index.name = "Centroid"
+#print(centroids.iloc[2])
+#centroids.set_index("Centroids", inplace=True)
+#print(centroids.loc['Centroid'])
+#print(centroids.index[2])
+results = {
+    'centroid0': [],
+    'centroid1': [],
+    'centroid2': [],
+    'centroid3': [],
+    'centroid4': []
+}
+'''
 
-results = []
+'''
 
-for i in range(0, clusters):
-    for blog in df.values:
+for k in range(0, clusters):
+    for j in range (0, len(df.index)):
+    #for blog in df.values:
         distance = 0
         best = ''
-        for centroid in centroids.values:
+        name_of_best = ''
+        for i in range(0, len(centroids.index)):
+        # for centroid in centroids.values:
             distance = 0
             ## pearson score centroid vs all blogs
-            pearson = pcs.pearsonr(centroid, blog)[0]
+            pearson = pcs.pearsonr(centroids.iloc[i], df.iloc[j])[0] ## Use 1 for p val
             #print(pearson = pcs.pearsonr(centroid, blog))
             ## Assign to closest centroid
             # om pearson för centroid är högst
             if pearson > distance:
                 distance = pearson
-                best = centroid
-        #print(distance)
-        print(best)
-        break
+                best = centroids.iloc[i]
+                #name_of_best = centroids.index[i]
+                name_of_best = centroids.index.values[i]
 
+                #print(name_of_best)
+                #print(df.index.values[j])
+                #print(distance)
+                #print(centroids.index[i]) ### Get name of centroid
+                results[name_of_best].append([df.index[j], distance])
+
+
+#print(centroids.columns.values)
+#for word in centroids.columns.values:
+#    pass
+
+results2 = {
+    'centroid0': [],
+    'centroid1': [],
+    'centroid2': [],
+    'centroid3': [],
+    'centroid4': []
+}
+
+for i in range(0,100):
+    for i in range(0, 5): #len(results)):
+        # print(results[f'centroid{i}'])
+        for word in centroids.columns.values:
+            avg = 0
+            for res in results[f'centroid{i}']:
+                avg += res[1]
+
+                #print(res[1])
+            avg /= len(results[f'centroid{i}'])
+        results2[f'centroid{i}'].append(avg)
+    break
+
+print(results2)
 '''
 words_with_avg = {}
 for word in df.columns.values:
